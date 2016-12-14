@@ -1,0 +1,16 @@
+<template name="bigScreen">
+  <div class="bigScreen">
+    {{#each itemsPartOne}}
+      {{> bigScreenItem}}
+    {{/each}}
+    <div class="bsElement bsTitle">
+      <h1>{{title}}</h1>
+    </div>
+    <div class="bsElement bsCountdown" style="background-color:{{primaryColour}}">
+      {{> countdown}}
+    </div>
+    {{#each itemsPartTwo}}
+      {{> bigScreenItem}}
+    {{/each}}
+  </div>
+</template>

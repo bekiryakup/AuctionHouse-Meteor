@@ -1,0 +1,873 @@
+@import "elements.less";
+@import "retina-1.1.0.less";
+@screen-lg-min: 1200px;
+@screen-md-min: 992px;
+@screen-sm-min: 768px;
+@screen-sm-max: 991px;
+@screen-xs-max: 767px;
+@screen-xs-min: 401px;
+@screen-xxs-max: 400px;
+
+.bottomRight {
+  position: fixed;
+  bottom: 5px;
+  right: 5px;
+  text-align: right;
+  p {
+    margin: 0px;
+  }
+}
+
+.btn {
+  margin-top: 10px;
+}
+
+html {
+  min-height: 100%;
+}
+
+body {
+  height: 100%;
+}
+
+#largeHeader .header {
+  background-color: #317694;
+  width: 100%;
+
+  h1 {
+    color: #FFFFFF;
+    text-align: left;
+    padding: 0 60px;
+    font-weight: 600;
+    @media (max-width: @screen-xxs-max) {
+      top: 15px;
+      font-size: 20px;
+      width: 100%;
+      padding: 0 10px;
+    }
+    @media (min-width: @screen-xs-min) and (max-width: @screen-xs-max) {  
+      font-size: 32px;
+      width: 100%;
+      padding: 0 10px;
+    }
+    @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+      top: 20px;
+      font-size: 36px;
+    }
+    @media (min-width: @screen-md-min) {
+      text-align: right;
+      top: 10px;
+      font-size: 48px;
+    }
+    @media (min-width: @screen-lg-min) {
+      font-size: 58px;
+    }
+  }
+}
+
+#largeHeader div#timeAndName {
+  padding: 20px 60px;
+  z-index: 1;
+  position: relative;
+  p {
+    color: #FFFFFF;
+  }
+  a {
+    color: rgba(255,255,255,0.5);
+  }
+  .bidderName {
+    font-weight: bold;
+  }
+  span.timeRemaining {
+    vertical-align: sub;
+  }
+  label {
+    color: #FFFFFF;
+    font-weight: normal;
+  }
+  button.btn.btn-success {
+    margin: 0;
+  }
+  button#scrollToTop {
+    display: none;
+  }
+  span.countdownTitle {
+    display: block;
+  }
+  .show-seconds {
+    #daysRemainingBlock {
+      display: none;
+    }
+  }
+  @media (max-width: @screen-xxs-max) {
+    .sentence-and {
+      display: none;
+    }
+    .show-days #secondsRemainingBlock {
+      display: none;
+    }
+    .show-seconds #daysRemainingBlock {
+      display: none;
+    }
+  }
+  @media (max-width: @screen-xs-max) {
+    padding: 10px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    p {
+      width: 100%;
+      height: 60px;
+    }
+    span.timeRemaining {
+      font-size: 24px;
+      font-weight: 600;
+      width: 46px;
+      text-align: center;
+    }
+    span.timeRemainingLabel {
+      font-size: 12px;
+      font-weight: normal;
+      width: 46px;
+      text-align: center;
+    }
+    .timeBlock {
+      top: 30px;
+      width: 46px;
+    }
+    #hoursRemainingBlock {
+      left: 0px;
+    }
+    #minutesRemainingBlock {
+      left: calc(~"46px + 20px");
+    }
+    #secondsRemainingBlock {
+      left: calc(~"2*(46px + 20px)");
+    }
+    label {
+      display: block;
+    }
+    input {
+      width: 78%;
+      display: inline-block;
+    }
+    button.btn.btn-success {
+      line-height: 12px;
+      margin-top: -2px;
+      width: 19%;
+      padding-left: 2px;
+      padding-right: 2px;
+      font-size: 12px;
+    }
+    .sentence {
+      font-size: 12px;
+      font-weight: normal;
+    }
+  }
+  @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+    p {
+      font-size: 24px;
+      font-weight: 200;
+    }
+    span.timeRemaining {
+      font-size: 36px;
+      font-weight: 600;
+      display: inline-block;
+      width: 50px;
+      text-align: center;
+      &#daysRemaining {
+        width: initial;
+      }
+    }
+    label {
+      font-size: 24px;
+      font-weight: 200;
+      margin-bottom: 5px;
+    }
+    input {
+      font-size: 24px;
+      height: 48px;
+      width: 480px;
+    }
+    button#submitName {
+      margin-left: 12px;
+    }
+  }
+  @media (min-width: @screen-md-min) {
+    p {
+      font-size: 22px;
+      font-weight: 200;
+    }
+    span.timeRemaining {
+      font-size: 36px;
+      font-weight: 600;
+      display: inline-block;
+      width: 50px;
+      text-align: center;
+      &#daysRemaining {
+        width: initial;
+      }
+    }
+    label {
+      font-size: 22px;
+      font-weight: 200;
+    }
+    input {
+      font-size: 22px;
+      margin-left: 10px;
+      height: 48px;
+      width: 365px;
+    }
+    button#submitName {
+      margin-left: 10px;
+    }
+  }
+  @media (min-width: @screen-lg-min) {
+    p {
+      font-size: 28px;
+      font-weight: 200;
+    }
+    span.timeRemaining {
+      font-size: 48px;
+      font-weight: 600;
+      text-align: center;
+      width: 62px;
+      &#daysRemaining {
+        width: initial;
+      }
+    }
+    label {
+      font-size: 28px;
+      font-weight: 200;
+    }
+    input {
+      font-size: 28px;
+      margin-left: 20px;
+      height: 60px;
+      width: 470px;
+    }
+    button#submitName {
+      margin-left: 20px;
+    }
+  }
+}
+
+#fixedHeader .header {
+  display: none;
+  background-color: #317694;
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+  top: 0px;
+  height: 60px;
+  
+  color: #ffffff;
+  
+  font-weight: 200;
+
+  &.visible {
+    display: block;
+  }
+
+  h1 {
+    display: none;
+  }
+
+  button {
+    margin: 0px;
+  }
+
+  .form-inline {
+    width: 50%;
+    text-align: right;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+
+    label {
+      position: absolute;
+      right: 15px;
+      font-weight: normal;
+      width: 100%;
+
+      .bidderNameSurround {
+        display: none;
+      }
+
+      a {
+        color: rgba(255,255,255,0.5);
+      }
+
+      span.bidderName {
+        font-weight: bold;
+      }
+    }
+
+    #enterYourNameLabel, #bidderName, #submitName {
+      display: none;
+    }
+
+    #scrollToTop {
+      position: absolute;
+      right: 15px;
+      height: 36px;
+      line-height: 16px;
+    }
+
+    .bidderName {
+      display: inline-block;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      width: 100%;
+    }
+
+    a {
+      display: block;
+    }
+  }
+
+  p {
+    height: 36px;
+  }
+  span.countdownTitle {
+    display: block;
+  }
+  span.timeRemaining {
+    font-size: 24px;
+    position: absolute;
+    font-weight: 600;
+    width: 46px;
+    text-align: center;
+  }
+  span.timeRemainingLabel {
+    font-size: 12px;
+    position: absolute;
+    top: 28px;
+    font-weight: normal;
+    width: 46px;
+    text-align: center;
+  }
+  .timeBlock {
+    position: absolute;
+    width: 46px;
+  }
+  
+  .sentence {
+    visibility: hidden;
+  }
+
+  @media (max-width: @screen-xxs-max) {
+    .show-days #secondsRemainingBlock {
+      display: none;
+    }
+    .show-seconds #daysRemainingBlock {
+      display: none;
+    }
+  }
+
+  @media (max-width: @screen-xs-max) {
+    font-size: 13px;
+    padding-top: 12px;
+    .timeBlock {
+      top: -5px;
+    }
+    span.countdownTitle {
+      display: none;
+
+      &.countdownInfo {
+        display: block;
+        padding-top: 8px;
+      }
+    }
+    .show-days {
+      #daysRemainingBlock {
+        left: 15px;
+      }
+      #hoursRemainingBlock {
+        left: calc(~"15px + 46px + 10px");
+      }
+      #minutesRemainingBlock {
+        left: calc(~"15px + 2*(46px + 10px)");
+      }
+      #secondsRemainingBlock {
+        left: calc(~"15px + 3*(46px + 10px)");
+      }
+    }
+    .show-seconds {
+      #daysRemainingBlock {
+        display: none;
+      }
+      #hoursRemainingBlock {
+        left: 15px;
+      }
+      #minutesRemainingBlock {
+        left: calc(~"15px + 1*(46px + 10px)");
+      }
+      #secondsRemainingBlock {
+        left: calc(~"15px + 2*(46px + 10px)");
+      }
+    }
+    
+    .form-inline {
+      width: calc(~"100% - (15px + 3*(46px + 10px) + 20px)");
+
+      #scrollToTop {
+        top: 0px;
+        font-size: 12px;
+        padding-left: 2px;
+        padding-right: 2px;
+      }
+    }
+  }
+  @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+    font-size: 16px;
+    padding-top: 18px;
+    .timeBlock {
+      top: -11px;
+    }
+    .show-days{
+      #daysRemainingBlock {
+        left: 160px;
+      }
+      #hoursRemainingBlock {
+        left: calc(~"160px + 46px + 10px");
+      }
+      #minutesRemainingBlock {
+        left: calc(~"160px + 2*(46px + 10px)");
+      }
+      #secondsRemainingBlock {
+        left: calc(~"160px + 3*(46px + 10px)");
+      }
+    }
+    .show-seconds {
+      #daysRemainingBlock {
+        display: none;
+      }
+      #hoursRemainingBlock {
+        left: 160px;
+      }
+      #minutesRemainingBlock {
+        left: calc(~"160px + 1*(46px + 10px)");
+      }
+      #secondsRemainingBlock {
+        left: calc(~"160px + 2*(46px + 10px)");
+      }
+    }
+    .form-inline #scrollToTop {
+      top: -6px;
+    }
+    .form-inline label {
+      top: -8px;
+    }
+  }
+  @media (min-width: @screen-md-min) {
+    font-size: 20px;
+    padding-top: 16px;
+    .timeBlock {
+      top: -9px;
+    }
+    .show-days {
+      #daysRemainingBlock {
+        left: 190px;
+      }
+      #hoursRemainingBlock {
+        left: calc(~"190px + 46px + 10px");
+      }
+      #minutesRemainingBlock {
+        left: calc(~"190px + 2*(46px + 10px)");
+      }
+      #secondsRemainingBlock {
+        left: calc(~"190px + 3*(46px + 10px)");
+      }
+    }
+    .show-seconds {
+      #daysRemainingBlock {
+        display: none;
+      }
+      #hoursRemainingBlock {
+        left: 190px;
+      }
+      #minutesRemainingBlock {
+        left: calc(~"190px + 1*(46px + 10px)");
+      }
+      #secondsRemainingBlock {
+        left: calc(~"190px + 2*(46px + 10px)");
+      }
+    }
+    .form-inline {
+      #scrollToTop {
+        top: -4px;
+      }
+      label {
+        top: -14px;
+      }
+    }
+  }
+  @media (min-width: @screen-lg-min) {
+    font-size: 24px;
+    padding-top: 12px;
+    .timeBlock {
+      top: -5px;
+    }
+    .show-days {
+      #daysRemainingBlock {
+        left: 230px;
+      }
+      #hoursRemainingBlock {
+        left: calc(~"230px + 46px + 10px");
+      }
+      #minutesRemainingBlock {
+        left: calc(~"230px + 2*(46px + 10px)");
+      }
+      #secondsRemainingBlock {
+        left: calc(~"230px + 3*(46px + 10px)");
+      }
+    }
+    .show-seconds {
+      #daysRemainingBlock {
+        display: none;
+      }
+      #hoursRemainingBlock {
+        left: 230px;
+      }
+      #minutesRemainingBlock {
+        left: calc(~"230px + 1*(46px + 10px)");
+      }
+      #secondsRemainingBlock {
+        left: calc(~"230px + 2*(46px + 10px)");
+      }
+    }
+    .form-inline {
+      #scrollToTop {
+        top: 0px;
+      }
+      label {
+        top: -12px;
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+div.item {
+  margin: 40px 0px;
+  overflow: hidden;
+  h2 {
+    margin-top: 0px;
+    color: #431822;
+    font-weight: 600;
+    font-size: 20px;
+  }
+  div.itemImage {
+    height: 155px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    margin-bottom: 10px;
+    background-size: contain;
+    background-color: rgba(242,244,245,1);
+    .rounded(5px);
+  }
+  p {
+    color: #3a3a3a;
+  }
+  p.donatedBy {
+    font-style: italic;
+    color: #919191;
+  }
+  p.currentBid {
+    font-weight: bold;
+    &.highlighted {
+      transition: color 2s linear;
+    }
+    span.hideBidder {
+      display: none;
+    }
+  }
+  div.description {
+    margin-bottom: 10px;
+    overflow: hidden;
+  }
+  @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+    margin: 60px 0px;
+    position: relative;
+    div.rowtext {
+      min-height: 155px;
+      width: 370px;
+    }
+    div.itemImage {
+      position: absolute;
+      right: 15px;
+      height: calc(~"100% - 70px");
+      width: 276px;
+      margin-bottom: 0;
+    }
+    p.currentBid {
+      width: 370px;
+      margin-bottom: 80px;
+    }
+    input.newBid {
+      position: absolute;
+      bottom: 0px;
+      width: 370px;
+      margin-top: 0;
+    }
+    span.currencySymbol {
+      position: absolute;
+      bottom: 11px;
+      left: 23px;
+      top: initial;
+      z-index: 10;
+    }
+    button.submitBid {
+      position: absolute;
+      bottom: 0px;
+      right: 15px;
+      width: 276px;
+    }
+  }
+  @media (min-width: @screen-md-min) {
+    p.currentBid {
+      height: 40px;
+    }
+    div.rowtext {
+      height: 272px;
+    }
+  }
+  @media (min-width: @screen-lg-min) {
+    div.rowtext {
+      height: 272px;
+    }
+  }
+}
+
+img.clearButton {
+  position: absolute;
+  @media (max-width: @screen-xs-max) {
+    right: 10px;
+    top: 32px;
+  }
+  @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+    right: 15px;
+    top: 48px;
+  }
+  @media (min-width: @screen-md-min) {
+    right: 40px;
+    top: 50%;
+    margin-top: -10px;
+  }
+}
+
+div.isMobile {
+  display: none;
+}
+
+div.isSelected {
+  display: inline;
+}
+
+input.newBid {
+  padding-left: 24px;
+  height: 50px;
+  font-size: 20px;
+  background-color: #fafafa;
+  margin-top: -30px;
+}
+
+span.currencySymbol {
+  font-size: 20px;
+  position: relative;
+  left: 10px;
+  top: 9px;
+  color: #9c9c9c;
+}
+
+a.dismissError {
+  padding-top: 10px;
+  display: block;
+  color: #757575;
+}
+
+button.submitBid {
+  width: 100%;
+  height: 50px;
+  font-size: 20px;
+  font-weight: 300;
+}
+
+@bsElementHeight: 202px;
+@bsElementWidth: 260px;
+
+div.bigScreen {
+  height: 630px;
+  width: 1024px;
+  margin: 45px auto;
+}
+
+div.bsElement {
+  margin: 0px 8px 7px 8px;
+  height: @bsElementHeight;
+  display: inline-block;
+  .rounded(10px);
+  overflow: hidden;
+}
+
+div.bsTitle {
+  margin-left: 37px;
+  width: 519px;
+  background-position: left center;
+  background-repeat: no-repeat;
+  h1 {
+    font-size: 36px;
+    font-weight: 600;
+    float: right;
+    text-align: right;
+    position: relative;
+    top: 60px;
+  }
+}
+
+div.bsCountdown {
+  margin-right: 37px;
+  width: 397px;
+  background-color: #317694;
+  p {
+    float: left;
+    color: #FFFFFF;
+    position: relative;
+    top: 25px;
+    height: 90px;
+    width: 100%;
+    font-size: 32px;
+    font-weight: 200;
+  }
+  span.countdownTitle {
+    text-align: center;
+    display: block;
+    &#countdownNotStarted {
+      position: relative;
+      top: 50px;
+    }
+    &#countdownEnded {
+      position: relative;
+      top: 50px;
+    }
+  }
+  span.timeRemaining {
+    font-size: 48px;
+    font-weight: 400;
+    position: absolute;
+    width: 74px;
+    text-align: center;
+  }
+  span.timeRemainingLabel {
+    position: absolute;
+    top: 60px;
+    font-size: 20px;
+    width: 74px;
+    text-align: center;
+  }
+  .timeBlock {
+    position: absolute;
+    top: 50px;
+    width: 74px;
+    margin-left: -37px;
+  }
+  .show-days {
+    #daysRemainingBlock {
+      left: 20%;
+    }
+    #hoursRemainingBlock {
+      left: 40%;
+    }
+    #minutesRemainingBlock {
+      left: 60%;
+    }
+    #secondsRemainingBlock {
+      left: 80%;
+    }
+  }
+  .show-seconds {
+    #daysRemainingBlock {
+      display: none;
+    }
+    #hoursRemainingBlock {
+      left: 30%;
+    }
+    #minutesRemainingBlock {
+      left: 50%;
+    }
+    #secondsRemainingBlock {
+      left: 70%;
+    }
+  }
+  .sentence {
+    visibility: hidden;
+  }
+}
+
+div.bsItem {
+  width: @bsElementWidth;
+  background-color: #1c4154;
+  position: relative;
+  margin: 0px 37px 7px 37px;
+  &.highlighted {
+    transition: background 2s linear;
+  }
+  div.itemImage {
+    height: 98px;
+    background-color: rgba(242,244,245,1);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-bottom: 10px;
+  }
+  h2 {
+    float: left;
+    color: #ffffff;
+    margin: 0px;
+    width: 100%;
+    font-weight: 400;
+    font-size: 18px;
+    text-align: center;
+    padding: 0px 5px;
+  }
+  &.name {
+    font-weight: 600;
+  }
+  .bid {
+    position: absolute;
+    bottom: 20px;
+    padding: 5px;
+    font-size: 12px;
+  }
+  .bidder {
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+    position: absolute;
+    bottom: 2px;
+    padding: 5px;
+    font-size: 12px;
+    &.hideBidder {
+      display: none;
+    }
+  }
+}
+
+p.loading {
+  display: block;
+  font-size: 24px;
+  color: #aaaaaa;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -17px;
+  margin-left: -43px;
+}
+
+.admin-form .input-group {
+  margin-bottom: 10px;
+}

@@ -1,0 +1,15 @@
+<template name="main">
+  <div id="largeHeader">
+    {{> header}}
+  </div>
+  <div id="fixedHeader">
+    {{> header}}
+  </div>
+  <div class="container" id="main">
+    <div class="col-lg-10 col-lg-offset-1">
+      {{#each items}}
+        {{> item}}
+      {{/each}}
+    </div>
+  </div>
+</template>

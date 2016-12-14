@@ -1,0 +1,17 @@
+# Meteor packages used by this project, one per line.
+#
+# 'meteor add' and 'meteor remove' will edit this file for you,
+# but you can also edit it by hand.
+
+standard-app-packages
+jquery
+less
+accounts-password
+mizzao:bootstrap-3
+iron:router
+momentjs:moment
+underscore
+meteorhacks:kadira
+standard-minifiers
+anti:i18n
+rzymek:moment-locale-fr
